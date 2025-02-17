@@ -5,24 +5,25 @@
   </head>
   <body>
     <script>
-      let mic;
-      
-function setup() {
+let mic;
+     
+    
+      function setup() {
   createCanvas(windowWidth,windowHeight);
-  mic=new p5.AudioIn();// guarda a la variable mic una entrada de audio de p5.js
-  mic.start();// activa el micròfon
+        mic=new p5.AudioIn();// guarda a la variable mic una entrada de audio de p5.js
+        mic.start();// activa el micròfon
 }
 function draw() {
-  let vol=miv.getLevel();
-  let h=map(vol,0,1,0,400);
-  background(233, 63, 138);
-  fill(247, 197, 160)
+  let vol=mic.getLevel();
+  let h=map(vol,0,1,0,800);
+  background(0, 255-h, 155);
+  fill(217, 190+h, 150);
   ellipse(windowWidth/2,windowHeight/2,300,300);
-  fill(158, 219, 245)
-  ellipse(windowWidth/2-70,windowHeight/2-70,50,50);
-  ellipse(windowWidth/2+70,windowHeight/2-70,50,50);
-arc(windowWidth/2,windowHeight/2+90,100,50+h,0,PI);
+  fill(42, 31-h, 13+h);
+  ellipse(windowWidth/2-70,windowHeight/2-60,50,50);
+  ellipse(windowWidth/2+70,windowHeight/2-60,50,50);
+  arc(windowWidth/2,windowHeight/2+90,100,50+h,0,PI);
 }
- </script>
+    </script>
 </body>
 </html>
