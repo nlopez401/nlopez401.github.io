@@ -1,0 +1,41 @@
+top: 0; 
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(255,255,255,0.9);
+/*Fons blanc amb lleugera transparència*/
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+/*Centra el contingut de la pantalla (loader i text)*/
+font-family: Arial, sans-serif;
+font-size: 18px;
+color: #333;
+/*Text en gris fosc per a bona llegibilitat*/
+z-index: 10;
+/*Es col·loca per sobre de tot el contingut (amb un índex z alt)*/
+}
+
+.loader {
+width: 50px:
+height: 50px:
+border: 6px solid #3498db;
+/*Marge de 6 píxels de grosor amb color blau (part de la vora)*/
+border-top: 6px solid transparent;
+/*La part superior és transparent per fer l'efecte giratori*/
+border-radius: 50%;
+/*Fa el loader circular*/
+animation: spin 1s linear infinite;
+/*Aplica una animación que fa girar l'element indefinidament*/
+margin-bottom: 10px;
+}
+
+/*Declaració de la keyframe de l'animació que fa girar l'element loader*/
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+/*Fi de l'estil CSS*/
+</style>
+</head>
