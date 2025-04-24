@@ -1,3 +1,41 @@
+<!DOCTYPE html>
+<!-- ondoca qie el document és HTML5 -->
+<html>
+<head>
+<!-- la seccio head conté metadades i enllaços a fitxers externs-->
+
+  <meta charste="UFT-8">
+  <!-- Defineiz la codificació de caràcters a UFT-8, que suporta els accents i simbols especials -->
+
+  <title>Art Geometric amd Mini Cara i Text Gran</title>
+<!-- Definrix el títol de la pa`gina que apereixerà a la pestanya del navegador -->
+
+  <!--Llibreries necessàries: s'iclouen des de servidors externs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js"></script>
+  <!-- Aquesta és la biblioteca p5.js, que facilita la creació de gràfics i animacions en el navegador -->
+
+  <script src="https://cnd.jdselivr.net/gh/ml5js/Intro.ML-Arts-IMA@ml5-build-10-7-19/ml5_build/ml5.min.js2"></script>
+  <!--Aquesta és la biblioteca p5.js, que ens permet utilitzar models d'intel·ligència artificial com la detecció facial -->
+
+  <style>
+    /* Inici del codi CSS per donar estil a la pàgina */
+
+    body{
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+      /* Fons de color gris clar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* La pàgina està centrada i es distribueixen els elements en columna */
+    }
+
+    /* Estils per a la pantalla de càrrega que es mostra abans que es carreguin els models */
+    #loading-screen {
+    position: fixed;
+      /* La pantalla de càrrega es manté fixa en tot moment a la finestra del navegador */
+
 top: 0; 
 left: 0;
 width: 100%;
@@ -39,3 +77,37 @@ margin-bottom: 10px;
 /*Fi de l'estil CSS*/
 </style>
 </head>
+
+
+video.size(480, 480);
+//Es defineix la mida del vídeo
+video.hide();
+//Amaguem el vídeo perquè només s'utilitzi per processar la imatge, no per mostrar-lo directament
+
+//Opcions per a la detecció facial (configuració del model)
+const faceOptions= {
+withLandmarks: true, //Detecta els punts clau de la cara (ulls, nas, boca, etc.)
+withExpressions: true, //Detecta les expressions facials (felicitat, tristesa, etc.)
+withDescriptions: false, //No sol·licita descriptors facials (informació per reconèixer cares)
+minConfidence: 0.5 //Nivel mínim de certesa per considerar una detecció vàlida
+};
+
+//Inicialitza el model de detecció facial amb el vídeo i les opcios definides 
+faceapi= m15.face4Api(video, faceOptions,faceReady);
+//Quan el model estigui preparat, es cridarà la funció faceReady
+}
+
+//Funció que s'executa quan el model de detecció facial està llest
+  function faceReady() {
+  faceapi.detect(gotFaces);
+  //Inicia la detecció facial cridant la funció gotFaces quan es complementen les deteccions 
+  }
+
+  function windowResized() {
+  resizeCanvas(windowWidth, windowHeight); //Nova funció per adaptar el canvas 
+  }
+
+  //Funció que s'executa cada cop que m15 .js té les deteccions d'una cara 
+  function gotFaces(error, result) {
+  if (error) {
+  console.error
