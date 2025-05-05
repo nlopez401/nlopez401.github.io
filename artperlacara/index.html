@@ -79,7 +79,8 @@ margin-bottom: 10px;
 </head>
 
 
-video.size(480, 480);
+
+  video.size(480, 480);
 //Es defineix la mida del vídeo
 video.hide();
 //Amaguem el vídeo perquè només s'utilitzi per processar la imatge, no per mostrar-lo directament
@@ -110,4 +111,20 @@ faceapi= m15.face4Api(video, faceOptions,faceReady);
   //Funció que s'executa cada cop que m15 .js té les deteccions d'una cara 
   function gotFaces(error, result) {
   if (error) {
-  console.error
+  console.error(error);
+  //En cas d'error, s'imprimeix a la consola i es deté l'execució
+  return;
+  }
+
+  detections=result;
+  //Guarda el resultat de les deteccions (poden ser múltiples cares, però en aquest cas s'utilitza la primera)
+
+
+
+  text("Expressió: " +dominant, width/2,50);
+  //"width/2" centra el text horitzontalment i "50" és la coordenada vertical
+
+  //Dibuixa una mini imatge de la cara a la part inferior dreta del canvas 
+  if(detections && detections.length>0){
+  //Es fa servir la imatge del vídeo capturat per representar la cara
+  imatge(video,width-miniWidth-20
