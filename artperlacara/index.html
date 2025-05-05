@@ -127,4 +127,26 @@ faceapi= m15.face4Api(video, faceOptions,faceReady);
   //Dibuixa una mini imatge de la cara a la part inferior dreta del canvas 
   if(detections && detections.length>0){
   //Es fa servir la imatge del vídeo capturat per representar la cara
-  imatge(video,width-miniWidth-20
+  imatge(video,width-miniWidth-20,height-miniHeight-20, miniWidth,miniHeight);
+  }
+  }
+
+  //Funció per dibuixar art geomètric en funció de l'expressió facial detectada 
+  function drawDifferentArt(dominant,intensity){
+  push();
+  //Guarda l'estat actual de les transformacions gràfiques 
+
+  translate(width/2,height/2);
+  //Trasllada l'origen del sistema de coordenades al centre del canvas 
+
+  noFill();
+  //Es desactiva al farcit (no es pinta amb color les formes interiors)
+
+  strokeWeight(4);
+  //Defineix l'amplada del traç (línia de dibuix) en 4 píxels
+
+  //Utilitza una estructura switch per triar el dibuix en funció del sentiment detectat 
+  switch (dominant) {
+  case "happy":
+  
+  
