@@ -296,8 +296,21 @@ vertex(369, 332.1875);
           break;
 
         case 'angry':
-          stroke(200,0,0,150); // vermell
+          stroke(200,0,0,150); // ull esquerrre
           beginShape();
+vertex(306, 200.1875);
+vertex(311, 194.1875);
+vertex(316, 191.1875);
+vertex(321, 190.1875);
+vertex(326, 190.1875);
+vertex(333, 191.1875);
+vertex(336, 195.1875);
+vertex(338, 199.1875);
+vertex(333, 202.1875);
+vertex(326, 205.1875);
+vertex(317, 206.1875);
+vertex(309, 204.1875);
+vertex(303, 200.1875);
           for (let i = 0; i < 16; i++) {
             let angle = map(i, 0, 16, 0, TWO_PI);
             let r = i % 2 ? 100 : 175;
@@ -309,8 +322,18 @@ vertex(369, 332.1875);
           break;
 
         case 'fearful':
-          stroke(100,100,100,150); // gris
+          stroke(100,100,100,150); // ull dret
           beginShape();
+      vertex(389, 184.1875);
+vertex(383, 185.1875);
+vertex(377, 188.1875);
+vertex(372, 193.1875);
+vertex(368, 198.1875);
+vertex(373, 199.1875);
+vertex(377, 200.1875);
+vertex(386, 201.1875);
+vertex(391, 199.1875);
+vertex(392, 189.1875);
           for (let x = 0; x <= VIRTUAL_W; x += 10) {
             let y = VIRTUAL_H/2 + 50 * sin((x - VIRTUAL_W/2) * 0.05) * intensity;
             vertex(x, y);
