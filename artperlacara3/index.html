@@ -492,11 +492,27 @@ vertex(369, 332.1875);
             break;
 
           case 'sad':
-            // Cas per a l'emoció "sad" (trist)
-            stroke(70, 130, 230);
-            // Contorn amb un to blau moderat (RGB: 70, 130, 230)
-            fill(100, 180, 255, 100 * smoothIntensity);
-            // Omple la figura amb un blau més clar i transparència segons la intensitat
+                beginShape();
+vertex(306, 200.1875);
+vertex(311, 194.1875);
+vertex(316, 191.1875);
+vertex(321, 190.1875);
+vertex(326, 190.1875);
+vertex(333, 191.1875);
+vertex(336, 195.1875);
+vertex(338, 199.1875);
+vertex(333, 202.1875);
+vertex(326, 205.1875);
+vertex(317, 206.1875);
+vertex(309, 204.1875);
+vertex(303, 200.1875);
+          }
+          endShape(CLOSE);
+          break;
+
+        case 'fearful':
+          stroke(100,100,100,150); // ull dret
+          beginShape();
             beginShape();
             vertex(centerX - baseSize, centerY);
             // Defineix el primer punt a l'esquerra del centre
