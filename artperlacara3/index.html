@@ -538,15 +538,18 @@ vertex(303, 200.1875);
             fill(255, 100, 100, 200 * smoothIntensity);
             // Omple la forma amb un vermell més suau, amb transparència dependenta de la intensitat
             beginShape();
-            for (let i = 0; i < 6; i++) {
-              // Bucle per generar 6 vertex de la figura (forma irregular)
-              const angle = map(i, 0, 6, 0, TWO_PI);
-              // Converteix l'índex "i" en un angle distribuint 6 punts de manera uniforme al voltant del cercle
-              const radius = baseSize * (0.7 + noise(t + i) * 0.3);
-              // Calcula el radi amb noise() per afegir variacions aleatòries a la forma
-              vertex(centerX + cos(angle) * radius, centerY + sin(angle) * radius);
-              // Defineix cada vertex a partir de coordenades polars convertides a cartesianes
-            }
+               beginShape();
+      vertex(389, 184.1875);
+vertex(383, 185.1875);
+vertex(377, 188.1875);
+vertex(372, 193.1875);
+vertex(368, 198.1875);
+vertex(373, 199.1875);
+vertex(377, 200.1875);
+vertex(386, 201.1875);
+vertex(391, 199.1875);
+vertex(392, 189.1875);
+          }
             endShape(CLOSE);
             break;
 
