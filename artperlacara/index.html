@@ -311,12 +311,6 @@ vertex(326, 205.1875);
 vertex(317, 206.1875);
 vertex(309, 204.1875);
 vertex(303, 200.1875);
-          for (let i = 0; i < 16; i++) {
-            let angle = map(i, 0, 16, 0, TWO_PI);
-            let r = i % 2 ? 100 : 175;
-            let x = VIRTUAL_W/2 + r * cos(angle);
-            let y = VIRTUAL_H/2 + r * sin(angle);
-            vertex(x, y);
           }
           endShape(CLOSE);
           break;
@@ -334,9 +328,6 @@ vertex(377, 200.1875);
 vertex(386, 201.1875);
 vertex(391, 199.1875);
 vertex(392, 189.1875);
-          for (let x = 0; x <= VIRTUAL_W; x += 10) {
-            let y = VIRTUAL_H/2 + 50 * sin((x - VIRTUAL_W/2) * 0.05) * intensity;
-            vertex(x, y);
           }
           endShape();
           break;
