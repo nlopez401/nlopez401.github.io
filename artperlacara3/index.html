@@ -140,22 +140,22 @@
         // Aquesta funció rep com a paràmetre l'emoció i retorna un objecte amb dos colors: start i end.
         switch (emotion) {
           case 'happy':
-            return { start: color(255, 223, 186), end: color(255, 183, 77) };
+            return { start: color(255, 223, 186), end: color(255, 183, 77); break; };
             // Per l'emoció "happy", s'utilitzen tons càlids i suaus (taronges i taronja clar).
           case 'sad':
-            return { start: color(173, 216, 230), end: color(100, 149, 237) };
+            return { start: color(173, 216, 230), end: color(100, 149, 237); break; };
             // Per "sad", es trien tons blaus que evoquen tranquil·litat o tristesa.
           case 'angry':
-            return { start: color(255, 160, 122), end: color(255, 69, 0) };
+            return { start: color(255, 160, 122), end: color(255, 69, 0); break; };
             // Per "angry", tons vermells i taronges intensos, que denoten passió o agressivitat.
           case 'disgusted':
-            return { start: color(144, 238, 144), end: color(34, 139, 34) };
+            return { start: color(144, 238, 144), end: color(34, 139, 34); break; };
             // Per "disgusted", s'utilitzen tons verds que poden evocar repulsió.
           case 'surprised':
-            return { start: color(216, 191, 216), end: color(147, 112, 219) };
+            return { start: color(216, 191, 216), end: color(147, 112, 219); break; };
             // Per "surprised", colors suaus lilàs o malva per evocar sorpresa.
           default:
-            return { start: color(240, 240, 240), end: color(200, 200, 200) };
+            return { start: color(240, 240, 240), end: color(200, 200, 200); break; };
             // Per qualsevol altra emoció (incloent "neutral"), s'utilitzen tons grisos.
         }
       }
